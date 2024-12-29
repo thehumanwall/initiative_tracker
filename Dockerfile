@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t new_repo .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name new_repo new_repo
+# docker build -t initiative_tracker .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name initiative_tracker initiative_tracker
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
