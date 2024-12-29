@@ -4,8 +4,7 @@
   <%= form.text_field :name %>
 </div>
 <div>
-  <%= form.label :team_group %>
-  <%= form.text_field :team_group %>
+  <%= form.select(:team_group, options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group), prompt: "Please Select") %>
 </div>
 
 <div>

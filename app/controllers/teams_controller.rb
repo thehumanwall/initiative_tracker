@@ -4,15 +4,17 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @team = Team.find(params[:id])
   end
 
   def new
     @team = Team.new
+    @team_groups = TeamGroup.all
   end
 
   def create
     @team = Team.new(team_params)
-    @team.team_group = TeamGroup.first
+    @team.team_group = TeamGroup.find(params.dig(:team, :team_group))
     if @team.save
       redirect_to @team
     else
@@ -32,6 +34,7 @@ class TeamsController < ApplicationController
   end
 
   def destroy
+    @team = Team.find(params[:id])
     @team.destroy
     redirect_to teams_path
   end
