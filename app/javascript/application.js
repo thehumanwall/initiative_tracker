@@ -5,3 +5,4 @@ import "popper";
 import "bootstrap";
 
 import "controllers";
+import * as bootstrap from "bootstrap"
