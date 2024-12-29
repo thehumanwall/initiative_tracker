@@ -1,0 +1,13 @@
+<h1>Teams</h1>
+
+<%= link_to "New team", teams_new_path %>
+
+<div id="teams">
+  <% @teams.each do |team| %>
+  <div>
+    <a href="/teams/<%= team.id %>">
+      <%= team.name %>
+    </a>
+  </div>
+  <% end %>
+</div>

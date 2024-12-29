@@ -1,0 +1,14 @@
+<%= form_with model: team do |form| %>
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<div>
+  <%= form.label :team_group %>
+  <%= form.text_field :team_group %>
+</div>
+
+<div>
+  <%= form.submit %>
+</div>
+<% end %>

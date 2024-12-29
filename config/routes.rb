@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  # teams routes
+  get "/teams", to: "teams#index"
+  get "/teams/new", to: "teams#new"
+  post "/teams", to: "teams#create"
+  get "/teams/:id", to: "teams#show"
+  get "/teams/:id/edit", to: "teams#edit"
+  patch "/teams/:id", to: "teams#update"
+  put "/teams/:id", to: "teams#update"
+  delete "/teams/:id", to: "teams#destroy"
+
   get "initiatives", to: "initiatives#index"
   get "home", to: "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
