@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_29_053645) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_30_044927) do
   create_table "initiative_items", force: :cascade do |t|
     t.string "name"
     t.integer "initiative_id", null: false
@@ -45,6 +45,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_29_053645) do
     t.integer "team_group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "value"
+    t.string "color_code"
     t.index ["team_group_id"], name: "index_teams_on_team_group_id"
   end
 
