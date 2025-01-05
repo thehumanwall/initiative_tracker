@@ -1,24 +1,37 @@
 <%= form_with model: team do |form| %>
-<div class="form-floating mb-3">
-  <%= form.text_field :name, class: "form-control", required: true %>
-  <%= form.label :name, class: "form-label" %>
+
+<div class="row g-2">
+  <div class="col-md">
+    <div class="form-floating mb-3">
+      <%= form.text_field :name, class: "form-control", required: true %>
+      <%= form.label :name, class: "form-label" %>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating mb-3">
+      <%= form.text_field :team_key, class: "form-control", required: true %>
+      <%= form.label :team_key, class: "form-label" %>
+    </div>
+  </div>
 </div>
-<div class="form-floating mb-3">
-  <%= form.text_field :team_key, class: "form-control", required: true %>
-  <%= form.label :team_key, class: "form-label" %>
-</div>
-<div class="form-floating mb-3">
-  <%= form.color_field :graph_color, class: "form-control" %>
-  <%= form.label :graph_color, class: "form-label" %>
-</div>
-<div class="form-floating mb-3">
-  <%= form.select \
-    :team_group, \
-    options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group), \
-    { :include_blank => true }, \
-    { :class => "form-select", :required => true } \
-  %>
-  <%= form.label :team_group, class: "form-label" %>
+<div class="row g-2">
+  <div class="col-md">
+    <div class="form-floating mb-3">
+      <%= form.color_field :graph_color, class: "form-control" %>
+      <%= form.label :graph_color, class: "form-label" %>
+    </div>
+  </div>
+  <div class="col-md">
+    <div class="form-floating mb-3">
+      <%= form.select \
+        :team_group, \
+        options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group), \
+        { :include_blank => true }, \
+        { :class => "form-select", :required => true } \
+      %>
+      <%= form.label :team_group, class: "form-label" %>
+    </div>
+  </div>
 </div>
 
 <div>
