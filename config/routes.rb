@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # teams routes
   resources :teams
+  resources :initiatives
 
   get "initiatives", to: "initiatives#index"
   get "home", to: "home#index"

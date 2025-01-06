@@ -1,2 +1,7 @@
-<h1>Team#edit</h1>
-<p>Find me in app/views/team/edit.html.erb</p>
+<div class="container">
+  <h1><%= @team.name %></h1>
+
+  <div>
+    <%= render "form", team: @team, action: :edit  %>
+  </div>
+</div>

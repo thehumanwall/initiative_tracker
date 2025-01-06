@@ -35,7 +35,14 @@
 </div>
 
 <div>
+  <% case action %>
+  <% when :new %>
   <%= form.submit "Submit", class: "btn btn-primary" %>
-  <%= link_to "Cancel", path, class: "btn btn-danger" %>
+  <%= link_to "Cancel", teams_path, class: "btn btn-danger" %>
+  <% when :edit %>
+  <%= form.submit "Update", class: "btn btn-primary" %>
+  <%= link_to "Back", teams_path, class: "btn btn-secondary" %>
+  <%= link_to "Delete", @team, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <% end %>
 </div>
 <% end %>

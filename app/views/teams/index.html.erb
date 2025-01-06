@@ -17,7 +17,7 @@
       <tbody>
         <% @teams.each do |team| %>
         <tr>
-          <td><%= link_to render(:partial => 'svg/pencilsquare'), team %></td>
+          <td><%= link_to render(:partial => 'svg/pencilsquare'), edit_team_path(team) %></td>
           <td><%= team.name %></td>
           <td><%= team.value%></td>
           <td title="<%= team.color_code%>" style="background-color: <%= team.color_code%>"></td>
