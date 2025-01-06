@@ -29,8 +29,6 @@ Things you may want to cover:
 
 
 todo: 
-- fix form for #show action
-- add form for #edit action
 - copy over to form pattern to initiative tab
 - figure out why app is rendering multiple times on load
 - update initiative_items table to have description field
