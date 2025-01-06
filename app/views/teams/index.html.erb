@@ -7,6 +7,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th></th>
           <th scope="col">Team Name</th>
           <th scope="col">Team Key</th>
           <th scope="col">Color Code</th>
@@ -16,9 +17,10 @@
       <tbody>
         <% @teams.each do |team| %>
         <tr>
-          <td><%= link_to team.name, team %></td>
+          <td><%= link_to render(:partial => 'svg/pencilsquare'), team %></td>
+          <td><%= team.name %></td>
           <td><%= team.value%></td>
-          <td><%= team.color_code%></td>
+          <td title="<%= team.color_code%>" style="background-color: <%= team.color_code%>"></td>
           <td><%= team.team_group.name%></td>
         </tr>
         <% end %>

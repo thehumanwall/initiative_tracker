@@ -26,3 +26,14 @@ Things you may want to cover:
 
 * How to run tests
 `rails test`
+
+
+todo: 
+- fix form for #show action
+- add form for #edit action
+- copy over to form pattern to initiative tab
+- figure out why app is rendering multiple times on load
+- update initiative_items table to have description field
+- add team_initiative_items table that links initiative_items to teams 
+- add team_initiative_items_audit table that tracks updates to initiative item updates for teams
+- add chart.js to the repo and build up POC with dummy data

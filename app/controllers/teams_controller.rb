@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
   end
 
   def show
+    @team_groups = TeamGroup.all
     @team = Team.find(params[:id])
   end
 
@@ -45,6 +46,6 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.expect(team: [ :name ])
+    params.expect(team: [ :name, :color_code, :value ])
   end
 end

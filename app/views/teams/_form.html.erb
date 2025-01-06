@@ -9,23 +9,23 @@
   </div>
   <div class="col-md">
     <div class="form-floating mb-3">
-      <%= form.text_field :team_key, class: "form-control", required: true %>
-      <%= form.label :team_key, class: "form-label" %>
+      <%= form.text_field :value, class: "form-control", required: true %>
+      <%= form.label :value, class: "form-label" %>
     </div>
   </div>
 </div>
 <div class="row g-2">
   <div class="col-md">
     <div class="form-floating mb-3">
-      <%= form.color_field :graph_color, class: "form-control" %>
-      <%= form.label :graph_color, class: "form-label" %>
+      <%= form.color_field :color_code, class: "form-control" %>
+      <%= form.label :color_code, class: "form-label" %>
     </div>
   </div>
   <div class="col-md">
     <div class="form-floating mb-3">
       <%= form.select \
         :team_group, \
-        options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group), \
+        options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group_id), \
         { :include_blank => true }, \
         { :class => "form-select", :required => true } \
       %>
@@ -36,5 +36,6 @@
 
 <div>
   <%= form.submit "Submit", class: "btn btn-primary" %>
+  <%= link_to "Cancel", path, class: "btn btn-danger" %>
 </div>
 <% end %>
