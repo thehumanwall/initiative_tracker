@@ -27,6 +27,9 @@ Things you may want to cover:
 * How to run tests
 `rails test`
 
+* Database interactions
+drop databases locally: `rails db:drop:_unsafe`
+migrate and seed: `rails db:migrate db:seed`
 
 todo: 
 - copy over to form pattern to initiative tab

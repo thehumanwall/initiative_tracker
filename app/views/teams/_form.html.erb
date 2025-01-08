@@ -24,12 +24,12 @@
   <div class="col-md">
     <div class="form-floating mb-3">
       <%= form.select \
-        :team_group, \
+        :team_group_id, \
         options_for_select(@team_groups.map { |group| [group.name, group.id] }, selected: @team.team_group_id), \
         { :include_blank => true }, \
         { :class => "form-select", :required => true } \
       %>
-      <%= form.label :team_group, class: "form-label" %>
+      <%= form.label :team_group_id, class: "form-label" %>
     </div>
   </div>
 </div>

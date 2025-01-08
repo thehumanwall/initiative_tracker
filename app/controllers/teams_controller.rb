@@ -10,7 +10,6 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    @team.team_group = TeamGroup.find(params.dig(:team, :team_group))
     if @team.save
       redirect_to teams_path
     else
@@ -44,6 +43,6 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.expect(team: [ :name, :color_code, :value ])
+    params.expect(team: [ :name, :color_code, :value, :team_group_id ])
   end
 end

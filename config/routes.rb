@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :teams
   resources :initiatives
 
-  get "initiatives", to: "initiatives#index"
   get "home", to: "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
