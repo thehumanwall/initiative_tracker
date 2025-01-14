@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    command: rails s -b '0.0.0.0'
+    volumes:
+      - .:/app
+      - ./public/assets:/app/public/assets
+    ports:
+      - "3000:3000"
