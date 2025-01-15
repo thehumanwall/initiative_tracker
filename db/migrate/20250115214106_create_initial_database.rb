@@ -10,7 +10,7 @@ class CreateInitialDatabase < ActiveRecord::Migration[8.0]
       t.string :name
       t.string :priority
       t.string :status
-      t.references :initiative, null: false, foreign_key: true
+      t.belongs_to :initiative, null: false, foreign_key: true
 
       t.timestamps
     end

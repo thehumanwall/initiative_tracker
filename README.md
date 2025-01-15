@@ -37,6 +37,7 @@ Things you may want to cover:
 * Database interactions
 drop databases locally: `rails db:drop:_unsafe`
 migrate and seed: `rails db:migrate db:seed`
+restart fresh: `rails db:drop db:create db:migrate`
 
 todo: 
 - copy over to form pattern to initiative tab
