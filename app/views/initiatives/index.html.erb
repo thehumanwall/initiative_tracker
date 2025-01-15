@@ -9,7 +9,6 @@
           <tr>
             <th></th>
             <th scope="col">Initiative Name</th>
-            <th scope="col">Initiative Description</th>
           </tr>
         </thead>
         <tbody>
@@ -17,7 +16,6 @@
           <tr>
             <td><%= link_to render(:partial => 'svg/pencilsquare'), edit_initiative_path(initiative) %></td>
             <td><%= initiative.name %></td>
-            <td><%= initiative.description %></td>
           </tr>
           <% end %>
         </tbody>

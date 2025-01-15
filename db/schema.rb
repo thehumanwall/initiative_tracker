@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_30_044927) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_15_214106) do
   create_table "initiative_items", force: :cascade do |t|
     t.string "name"
+    t.string "priority"
+    t.string "status"
     t.integer "initiative_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,7 +23,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_044927) do
 
   create_table "initiatives", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "priorities", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +41,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_044927) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "team_groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -42,11 +55,11 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_30_044927) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
+    t.string "value"
+    t.string "color_code"
     t.integer "team_group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "value"
-    t.string "color_code"
     t.index ["team_group_id"], name: "index_teams_on_team_group_id"
   end
 

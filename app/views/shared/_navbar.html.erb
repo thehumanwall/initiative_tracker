@@ -31,12 +31,14 @@
         type="button"
         id="dropdownMenuButton"
         data-toggle="dropdown"
+        data-target="#dropdownMenuItems"
         aria-haspopup="true"
         aria-expanded="false"
+        aria-controls="dropdownMenuItems"
       >
         <i class="bi bi-plus"></i>
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuItems">
         <a class="dropdown-item" href="#">Action</a>
         <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" href="#">Something else here</a>

@@ -8,8 +8,24 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# destroy all static tables
 TeamGroup.destroy_all
+Priority.destroy_all
+Status.destroy_all
+
+# seed all static tables
 TeamGroup.create!([
   { name: "Experiences" },
   { name: "Services" }
+])
+Priority.create!([
+  { name: "Low" },
+  { name: "Medium" },
+  { name: "High" }
+])
+Status.create!([
+  { name: "Not Started" },
+  { name: "Planning" },
+  { name: "Adopting" },
+  { name: "Full Adoption" }
 ])
