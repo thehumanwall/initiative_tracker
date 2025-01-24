@@ -1,3 +1,3 @@
 class Initiative < ApplicationRecord
-  has_many :initiative_item, dependent: :destroy
+  has_many :initiative_items, dependent: :destroy
 end

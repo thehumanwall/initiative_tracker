@@ -13,12 +13,14 @@
 ActiveRecord::Schema[8.0].define(version: 2025_01_15_214106) do
   create_table "initiative_items", force: :cascade do |t|
     t.string "name"
-    t.string "priority"
-    t.string "status"
     t.integer "initiative_id", null: false
+    t.integer "status_id"
+    t.integer "priority_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["initiative_id"], name: "index_initiative_items_on_initiative_id"
+    t.index ["priority_id"], name: "index_initiative_items_on_priority_id"
+    t.index ["status_id"], name: "index_initiative_items_on_status_id"
   end
 
   create_table "initiatives", force: :cascade do |t|

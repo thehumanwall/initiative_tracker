@@ -8,9 +8,9 @@ class CreateInitialDatabase < ActiveRecord::Migration[8.0]
 
     create_table :initiative_items do |t|
       t.string :name
-      t.string :priority
-      t.string :status
       t.belongs_to :initiative, null: false, foreign_key: true
+      t.belongs_to :status
+      t.belongs_to :priority
 
       t.timestamps
     end

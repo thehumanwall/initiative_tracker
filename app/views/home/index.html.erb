@@ -1,4 +1,12 @@
 <div id="home" class="container">
+
+  <div class="ps-3 pt-2">
+    <%= select_tag \
+      :team_id, \
+      options_for_select(@teams.map { |team| [team.name, team.id] }, selected: nil), \
+      { :class => "form-select" } \
+    %>
+  </div>
   <% @initiatives.each do |initiative| %>
   <div class="ps-3 pt-2">
     <p class="text-decoration-underline m-0 fs-4"><%= initiative.name %></p>
@@ -13,11 +21,23 @@
       </tr>
     </thead>
     <tbody>
-      <% initiative.initiative_item.each do |initiative_item| %>
+      <% initiative.initiative_items.each do |initiative_item| %>
       <tr>
         <th scope="row"><%= initiative_item.name %></th>
-        <td class="text-nowrap"><%= initiative_item.status %></td>
-        <td><%= initiative_item.priority %></td>
+        <td class="text-nowrap">
+          <%= select_tag \
+            :status_id, \
+            options_for_select(@statuses.map { |status| [status.name, status.id] }, selected: initiative_item.status_id), \
+            { :class => "form-select" } \
+          %>
+        </td>
+        <td>
+          <%= select_tag \
+            :priority_id, \
+            options_for_select(@priorities.map { |priority| [priority.name, priority.id] }, selected: initiative_item.priority_id), \
+            { :class => "form-select" } \
+          %>
+        </td>
       </tr>
       <% end %>
     </tbody>

@@ -14,18 +14,23 @@ Priority.destroy_all
 Status.destroy_all
 
 # seed all static tables
-TeamGroup.create!([
-  { name: "Experiences" },
-  { name: "Services" }
-])
-Priority.create!([
-  { name: "Low" },
-  { name: "Medium" },
-  { name: "High" }
-])
-Status.create!([
-  { name: "Not Started" },
-  { name: "Planning" },
-  { name: "Adopting" },
-  { name: "Full Adoption" }
-])
+[ "Experiences", "Services" ].each do |team_group_name|
+  TeamGroup.find_or_create_by!(name: team_group_name)
+end
+[ "Low", "Medium", "High" ].each do |priority_name|
+  Priority.find_or_create_by!(name: priority_name)
+end
+[ "Not Started", "Planning", "Adopting", "Full Adoption" ].each do |status_name|
+  Status.find_or_create_by!(name: status_name)
+end
+
+
+[ "Initiative 1", "Initiative 2", "Initiative 3" ].each do |initiative_name|
+  initiative = Initiative.find_or_create_by!(name: initiative_name)
+  initiative.initiative_items.destroy_all
+  initiative.initiative_items.create!([
+    { name: "#{initiative_name} Item 1", priority: Priority.first, status: Status.first },
+    { name: "#{initiative_name} Item 2", priority: Priority.second, status: Status.second },
+    { name: "#{initiative_name} Item 3", priority: Priority.third, status: Status.third }
+  ])
+end
